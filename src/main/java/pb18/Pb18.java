@@ -31,7 +31,7 @@ public class Pb18 {
     }
 
     static int distanceToCollectKeys(MazeGraph mazeGraph, Vertex start, Set<Vertex> toBeCollectedKeys, int level) {
-        String filled = StringUtils.repeat("    ", level);
+        String filled = StringUtils.repeat("    ", level); // ident logs to debug
         final int cacheKey = Objects.hash(start, toBeCollectedKeys);
         log.debug("{}Explore from {} with missing keys {} hash {}", filled, start, toBeCollectedKeys, cacheKey);
         if(distanceToCollectKeysCache.containsKey(cacheKey)){
